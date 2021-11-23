@@ -11,21 +11,25 @@ class Account
 
 def deposit_funds(credit)
   @balance += credit
-  pp create_transaction(credit, 0, balance)
+  pp create_transaction(credit, 0)
 end
 
 def withdraw_funds(debit)
   @balance -= debit
-pp create_transaction(0, debit, balance)
+pp create_transaction(0, debit)
 end
 
-def print_balance
+def print_statement
 "you have a balance of #{@balance}"
+puts "date || credit || debit || balance"
+  @transaction_history.map do |transaction|
+    puts " #{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}"
+  end
 end
 
 private
 
-def create_transaction(credit, debit, balance)
+def create_transaction(credit, debit)
   @transaction_history << Transaction.new(credit, debit, balance)
 end
 
@@ -46,3 +50,4 @@ end
 account = Account.new
 account.deposit_funds(100)
 account.withdraw_funds(50)
+account.print_statement
