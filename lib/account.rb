@@ -56,4 +56,5 @@ end
 account = Account.new
 account.deposit_funds(100)
 account.withdraw_funds(50)
+puts account.balance
 account.print_statement
