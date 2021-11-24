@@ -1,6 +1,6 @@
 # **bank_tech_test**
 
-This is tech tech test for Makers Academy.
+This is a tech tech test for Makers Academy.
 
 ## **Requirements**
 You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
@@ -32,7 +32,7 @@ $ bundle install
 
 ### **Technical**
 
-Tech/Frameworks Used
+Tech/Frameworks used
 Ruby, RSpec, Rubocop, Simple Cov
 
 ### **Process**
@@ -40,7 +40,7 @@ Ruby, RSpec, Rubocop, Simple Cov
 - I dissected the task, breaking it down by creating user stories and a domain model.
 - I approached the test by identifying the main objects and created classes in order of dependency.
 - I used TDD (red, green, refactor) to work through each story.
-- I followed the Single Responsibility principle.
+- I followed the Single Responsibility principle and encapsulated each class.
 
 ### **User Stories**
 
@@ -68,6 +68,6 @@ I would like to ba able to print my balance
 
 ## Domain Model
 ```
-!(https://user-images.githubusercontent.com/25979615/143261464-4483cc42-b65e-422e-8043-34eb8aa0f5fd.png)
+<img width="552" alt="Screenshot 2021-11-24 at 14 54 36" src="https://user-images.githubusercontent.com/25979615/143265900-800afcd3-7296-4f4c-8843-5c19238982de.png">
 ```
 ---
