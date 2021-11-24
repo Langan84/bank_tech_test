@@ -6,6 +6,5 @@ class Transaction
     @credit = credit
     @debit = debit
     @balance = balance
-
   end
 end

@@ -1,7 +1,8 @@
 require_relative 'transaction'
+
 class Account
 
-  attr_reader :name, :balance
+  attr_reader :name, :balance, :transaction_history
   DEFAULT_BALANCE = 0
 
   def initialize
@@ -11,20 +12,23 @@ class Account
 
 def deposit_funds(credit)
   @balance += credit
-  pp create_transaction(credit, 0)
+  create_transaction(credit, 0)
 end
 
 def withdraw_funds(debit)
   @balance -= debit
-pp create_transaction(0, debit)
+  create_transaction(0, debit)
 end
 
 def print_statement
-"you have a balance of #{@balance}"
-puts "date || credit || debit || balance"
-  @transaction_history.map do |transaction|
+  if @transaction_history.empty?
+    puts "No transactions to display."
+  else
+    puts "date || credit || debit || balance"
+    @transaction_history.map do |transaction|
     puts " #{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}"
   end
+end
 end
 
 private
@@ -33,7 +37,9 @@ def create_transaction(credit, debit)
   @transaction_history << Transaction.new(credit, debit, balance)
 end
 
-
+# def statement_format
+#   " #{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}"
+# end
 
 
 # Given a client makes a deposit of 1000 on 10-01-2023
