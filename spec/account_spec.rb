@@ -24,4 +24,9 @@ describe "Account" do
     expect(account.transaction_history.last.balance).to eq 50
   end
 
+  # it 'checks for sufficient funds before making the transaction' do
+  #   account = Account.new
+  #   account.deposit_funds(100)
+  #   expect{ account.withdraw_funds(150) }.to raise_error error_message
+  # end
 end
